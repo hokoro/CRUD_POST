@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:fragment="headerFragment (title)"> <!--재사용할 조각 정의-->
+    <meta charset="UTF-8">
+    <title th:replace="${title}"></title>   <!--제목은 기능마다 바꿔야 하기 떄문에 replace-->
+    <link th:href="@{css/main.css}" rel="stylesheet"/> <!--사용할 css 가져오기-->
+</head>
+<body>
+
+</body>
+</html>

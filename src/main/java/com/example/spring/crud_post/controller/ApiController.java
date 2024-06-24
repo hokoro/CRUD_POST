@@ -1,14 +1,21 @@
 package com.example.spring.crud_post.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.spring.crud_post.dto.SignUpFormDTO;
+import com.example.spring.crud_post.service.interfaces.MemberService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
+@RequiredArgsConstructor
 public class ApiController {
-    @GetMapping("/name")
-    public String name(){
-        return "chan";
+
+    private final MemberService memberService;
+
+    @PostMapping("/signup")
+    public ResponseEntity userSignup(@RequestBody SignUpFormDTO formDTO) {
+        return memberService.signup(formDTO);
     }
+
 }
