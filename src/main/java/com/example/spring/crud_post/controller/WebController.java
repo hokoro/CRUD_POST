@@ -17,4 +17,10 @@ public class WebController {
     public String signup(){
         return "signup";
     }
+
+    // 로그인 페이지
+    @GetMapping("/signin")
+    public String signin(){
+        return "signin";
+    }
 }
